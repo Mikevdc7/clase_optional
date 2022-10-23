@@ -1,6 +1,8 @@
 package org.mvallesg.optional.ejemplo.repositorio;
 
 import org.mvallesg.optional.ejemplo.models.Computador;
+import org.mvallesg.optional.ejemplo.models.Fabricante;
+import org.mvallesg.optional.ejemplo.models.Procesador;
 
 import java.util.*;
 
@@ -10,7 +12,10 @@ public class ComputadorRepositorio implements Repositorio<Computador>{
 
     public ComputadorRepositorio() {
         dataSource = new ArrayList<>();
-        dataSource.add(new Computador("Asus ROG", "Strix G512"));
+        Procesador procesador = new Procesador("I9-9880H", new Fabricante("Intel"));
+        Computador asus = new Computador("Asus ROG", "Strix G512");
+        asus.setProcesador(procesador);
+        dataSource.add(asus);
         dataSource.add(new Computador("MacBook Pro", "MVVK2CI"));
     }
 

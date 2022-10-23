@@ -1,5 +1,7 @@
 package org.mvallesg.optional.ejemplo.models;
 
+import java.util.Optional;
+
 public class Procesador {
     private String nombre;
     private Fabricante fabricante;
@@ -15,5 +17,13 @@ public class Procesador {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Optional<Fabricante> getFabricante() {
+        return Optional.ofNullable(fabricante);
+    }
+
+    public void setFabricante(Fabricante fabricante) {
+        this.fabricante = fabricante;
     }
 }

@@ -1,5 +1,7 @@
 package org.mvallesg.optional.ejemplo.models;
 
+import java.util.Optional;
+
 public class Computador {
     private String nombre;
     private String modelo;
@@ -26,8 +28,8 @@ public class Computador {
         this.modelo = modelo;
     }
 
-    public Procesador getProcesador() {
-        return procesador;
+    public Optional<Procesador> getProcesador() {
+        return Optional.ofNullable(procesador);
     }
 
     public void setProcesador(Procesador procesador) {
