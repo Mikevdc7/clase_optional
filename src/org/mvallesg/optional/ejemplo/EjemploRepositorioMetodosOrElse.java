@@ -9,15 +9,8 @@ public class EjemploRepositorioMetodosOrElse {
 
         Repositorio<Computador> repositorio = new ComputadorRepositorio();
 
-        repositorio.filtrar("asus rog").ifPresentOrElse(pc -> System.out.println(pc.toString()), () -> System.out.println("No se encontró."));
-
-        //Optional<Computador> pc = repositorio.filtrar("asus");
-
-        /*
-        if(pc.isPresent()){
-            System.out.println(pc.get().toString());
-        } else{
-            System.out.println("No se encontró");
-        }*/
+        Computador defecto = new Computador("HP Omen", "LA0001");
+        Computador pc = repositorio.filtrar("asus rog").orElse(defecto);
+        System.out.println(pc);
     }
 }
